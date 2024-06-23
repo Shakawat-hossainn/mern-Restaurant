@@ -52,7 +52,8 @@ if (!token) {
     return next(errorHandler(500, 'Internal Server Error'));
 }
         res.cookie('access_token',token,{
-        httpOnly: true
+        httpOnly: true,
+          secure:true
         })
         res.status(200).json({
             rest
