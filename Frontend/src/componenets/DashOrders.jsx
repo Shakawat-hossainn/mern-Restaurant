@@ -3,11 +3,11 @@ import OrderCard from './OrderCard';
 
 const DashOrders = () => {
   const [orders, setOrders] = useState([]);
-
+  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch('/api/v1/delivery/getAllOrders',{
+        const res = await fetch(`${url}/api/v1/delivery/getAllOrders`,{
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'

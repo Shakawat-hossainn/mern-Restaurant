@@ -3,10 +3,10 @@ import { BiCart } from "react-icons/bi";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-
+  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
   useEffect(() => {
     const getOrders = async () => {
-      const res = await fetch('/api/v1/delivery/getOrders', {
+      const res = await fetch(`${url}/api/v1/delivery/getOrders`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

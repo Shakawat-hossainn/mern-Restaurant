@@ -5,6 +5,7 @@ import { Button } from 'flowbite-react';
 import { clearCart } from '../features/Cart/cartSlice.js';
 
 const Checkout = () => {
+  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
   const dispatch = useDispatch();
   const { total, cartItems } = useSelector((store) => store.cart);
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const Checkout = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/v1/delivery/deliveryAddress', {
+    const res = await fetch(`${url}/api/v1/delivery/deliveryAddress`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

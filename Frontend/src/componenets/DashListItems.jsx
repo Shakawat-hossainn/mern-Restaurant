@@ -3,13 +3,13 @@ import { Table } from "flowbite-react";
 import { TiDelete } from "react-icons/ti";
 
 const DashListItems = () => {
-  const url = 'http://localhost:5000/images';
+  const urlImage = 'http://localhost:5000/images';
   const [products, setProducts] = useState([]);
   const [deleted, setDeleted] = useState(null);
-
+  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
   const deleteProduct = async (productId) => {
     try {
-      const res = await fetch(`/api/v1/product/deleteProduct/${productId}`, {
+      const res = await fetch(`${url}/api/v1/product/deleteProduct/${productId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const DashListItems = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch('/api/v1/product/getProducts', {
+        const res = await fetch(`${url}/api/v1/product/getProducts`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const DashListItems = () => {
             {products.map((product) => (
               <Table.Row key={product._id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                  <img src={`${url}/` + product.image} alt={product.title} className="h-12 w-12 rounded-full object-cover" />
+                  <img src={`${urlImage}/` + product.image} alt={product.title} className="h-12 w-12 rounded-full object-cover" />
                 </Table.Cell>
                 <Table.Cell>{product.title}</Table.Cell>
                 <Table.Cell>{product.category}</Table.Cell>

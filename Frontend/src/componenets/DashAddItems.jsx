@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Label, TextInput, Textarea, FileInput, Select } from "flowbite-react";
 
 const DashAddItems = () => {
-  
+  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -33,7 +33,7 @@ const DashAddItems = () => {
     }
 
     try {
-      const res = await fetch('/api/v1/product/createProduct', {
+      const res = await fetch(`${url}/api/v1/product/createProduct`, {
         method: 'POST',
         body: form
       });

@@ -9,15 +9,15 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [deleted, setDeleted] = useState(null);
   const { cartItems, total } = useSelector((store) => store.cart);
-  const url = 'http://localhost:5000/images';
-
+  const urlImage = 'http://localhost:5000/images';
+  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems, dispatch]);
 
   const deleteCart = async (cartId) => {
     try {
-      const res = await fetch(`/api/v1/cart/deleteCart/${cartId}`, {
+      const res = await fetch(`${url}/api/v1/cart/deleteCart/${cartId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ const Cart = () => {
                   return (
                     <Table.Row key={item._id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                       <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                        <img src={`${url}/${image}`} alt={title} className="h-12 w-12 rounded-full object-cover" />
+                        <img src={`${urlImage}/${image}`} alt={title} className="h-12 w-12 rounded-full object-cover" />
                       </Table.Cell>
                       <Table.Cell>{title}</Table.Cell>
                       <Table.Cell>{category}</Table.Cell>

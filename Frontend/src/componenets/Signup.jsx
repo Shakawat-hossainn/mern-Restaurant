@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
   const navigate = useNavigate()
   const [formData, setFormData] = useState([])
   const [errorMessage, seterrorMessage] = useState(null)
@@ -18,7 +19,7 @@ const handleSubmit = async(e) => {
   
   try {
     
-    const res = await fetch('/api/v1/auth/signup',{
+    const res = await fetch(`${url}/api/v1/auth/signup`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
