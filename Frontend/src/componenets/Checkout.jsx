@@ -30,6 +30,7 @@ const Checkout = () => {
     e.preventDefault();
     const res = await fetch(`${url}/api/v1/delivery/deliveryAddress`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
       },

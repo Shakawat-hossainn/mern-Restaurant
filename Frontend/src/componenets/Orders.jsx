@@ -8,6 +8,7 @@ const Orders = () => {
     const getOrders = async () => {
       const res = await fetch(`${url}/api/v1/delivery/getOrders`, {
         method: 'GET',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
         }

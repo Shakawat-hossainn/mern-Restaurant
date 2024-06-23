@@ -32,6 +32,7 @@ const Menu = () => {
       try {
         const res = await fetch(`${url}/api/v1/product/getProducts`, {
           method: 'GET',
+          credentials: 'include',
           headers: {
             'Content-Type': 'application/json'
           }
@@ -55,6 +56,7 @@ const Menu = () => {
     try {
       const res = await fetch(`${url}/api/v1/cart/addToCart`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -79,6 +81,7 @@ const Menu = () => {
       try {
         const res = await fetch(`${url}/api/v1/cart/getCart`, {
           method: 'GET',
+          credentials: 'include',
           headers: {
             'Content-Type': 'application/json'
           }
