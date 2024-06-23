@@ -6,13 +6,19 @@ import productRoutes from './routes/product.route.js'
 import cookieParser from 'cookie-parser';
 import cartRoutes from './routes/cart.route.js'
 import deliveryRoutes from './routes/delivery.route.js'
-
+import cors from 'cors';
 
 
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use("/images", express.static('uploads'))
+app.use(cors({
+    origin: 'https://mern-restaurant-frontend-j5d9.onrender.com', // Replace with your frontend's URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    allowedHeaders: 'Content-Type, Authorization'
+  }));
 const PORT = process.env.PORT || 5000;
 
 app.use('/api/v1/auth',authRoutes)
