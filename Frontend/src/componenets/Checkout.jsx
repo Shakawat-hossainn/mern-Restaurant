@@ -5,7 +5,7 @@ import { Button } from 'flowbite-react';
 import { clearCart } from '../features/Cart/cartSlice.js';
 
 const Checkout = () => {
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   const dispatch = useDispatch();
   const { total, cartItems } = useSelector((store) => store.cart);
   const [formData, setFormData] = useState({

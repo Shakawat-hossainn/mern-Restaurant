@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Label, TextInput, Textarea, FileInput, Select } from "flowbite-react";
 
 const DashAddItems = () => {
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   const [formData, setFormData] = useState({
     title: '',
     description: '',

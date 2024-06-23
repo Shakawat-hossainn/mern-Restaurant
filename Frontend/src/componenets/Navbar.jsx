@@ -5,7 +5,7 @@ import { signoutSuccess } from '../features/User/userSlice';
 
 
 const Navbar = () => {
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((store) => store.user);

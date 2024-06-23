@@ -3,7 +3,7 @@ import OrderCard from './OrderCard';
 
 const DashOrders = () => {
   const [orders, setOrders] = useState([]);
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   useEffect(() => {
     const fetchOrders = async () => {
       try {

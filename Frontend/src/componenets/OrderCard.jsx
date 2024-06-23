@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const OrderCard = ({ order }) => {
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   const [status, setStatus] = useState(order.status);
 //console.log(order)
   const handleStatusChange = async (e) => {

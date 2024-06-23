@@ -13,7 +13,7 @@ const Menu = () => {
   const { cartItems } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   const urlImage = 'http://localhost:5000/images';
   const [menuItems, setMenuItems] = useState([]);
   const [categories, setCategories] = useState(['all']);

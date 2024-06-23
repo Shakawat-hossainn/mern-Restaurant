@@ -6,7 +6,7 @@ const DashListItems = () => {
   const urlImage = 'http://localhost:5000/images';
   const [products, setProducts] = useState([]);
   const [deleted, setDeleted] = useState(null);
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   const deleteProduct = async (productId) => {
     try {
       const res = await fetch(`${url}/api/v1/product/deleteProduct/${productId}`, {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const url = "https://mern-restaurant-backend-0xmm.onrender.com"
+  const url = "https://mern-restaurant-backend-cphh.onrender.com"
   const navigate = useNavigate()
   const [formData, setFormData] = useState([])
   const [errorMessage, seterrorMessage] = useState(null)
