@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://mern-restaurant-backend-0xmm.onrender.com',
+        target: 'http://localhost:5000',
         secure:false
       },
     },
