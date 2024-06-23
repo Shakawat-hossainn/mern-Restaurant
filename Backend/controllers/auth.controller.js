@@ -53,7 +53,7 @@ if (!token) {
 }
         res.cookie('access_token',token,{
         httpOnly: true,
-          secure:true
+          
         })
         res.status(200).json({
             rest
