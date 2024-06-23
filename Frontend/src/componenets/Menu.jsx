@@ -14,7 +14,7 @@ const Menu = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const url = "https://mern-restaurant-backend-cphh.onrender.com"
-  const urlImage = 'http://localhost:5000/images';
+  const urlImage = 'https://mern-restaurant-backend-cphh.onrender.com/images';
   const [menuItems, setMenuItems] = useState([]);
   const [categories, setCategories] = useState(['all']);
   const [displayedItems, setDisplayedItems] = useState([]);

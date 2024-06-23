@@ -9,7 +9,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [deleted, setDeleted] = useState(null);
   const { cartItems, total } = useSelector((store) => store.cart);
-  const urlImage = 'http://localhost:5000/images';
+  const urlImage = 'https://mern-restaurant-backend-cphh.onrender.com/images';
   const url = "https://mern-restaurant-backend-cphh.onrender.com"
   useEffect(() => {
     dispatch(calculateTotals());

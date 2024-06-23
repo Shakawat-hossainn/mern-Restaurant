@@ -3,7 +3,7 @@ import { Table } from "flowbite-react";
 import { TiDelete } from "react-icons/ti";
 
 const DashListItems = () => {
-  const urlImage = 'http://localhost:5000/images';
+  const urlImage = 'https://mern-restaurant-backend-cphh.onrender.com/images';
   const [products, setProducts] = useState([]);
   const [deleted, setDeleted] = useState(null);
   const url = "https://mern-restaurant-backend-cphh.onrender.com"
