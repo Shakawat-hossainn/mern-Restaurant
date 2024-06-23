@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media screen and (max-width: 550px){
+    .hero-size, .footer-size, .signup-size, .login-size{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: 4rem;
+    }
+   
+    
+}
+@media screen and (max-width: 613px){
+    .card-style{
+        position: relative;
+        left: 4rem;
+        
+
+    }
+}
