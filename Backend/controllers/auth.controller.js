@@ -51,10 +51,11 @@ if (!token) {
     console.error('Error generating JWT token');
     return next(errorHandler(500, 'Internal Server Error'));
 }
-        res.cookie('access_token',token,{
-        httpOnly: true,
-          
-        })
+        res.cookie('access_token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', // secure in production
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+    });
         res.status(200).json({
             rest
         })
