@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/images", express.static('uploads'))
 app.use(cors({
-    origin: 'https://mern-restaurant-frontend-j5d9.onrender.com', // Replace with your frontend's URL
+    origin: 'https://mern-restaurant-backend-cphh.onrender.com', // Replace with your frontend's URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: 'Content-Type, Authorization'
