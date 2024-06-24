@@ -30,7 +30,7 @@ const Menu = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch(`${url}/api/v1/product/getProducts`, {
+        const res = await fetch(`/api/v1/product/getProducts`, {
           method: 'GET',
           credentials: 'include',
           headers: {
