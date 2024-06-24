@@ -46,9 +46,15 @@ const login =async(req,res,next)=>{
             return next(errorHandler(400,'Invalid email or password'))
         }
         const {password:pass,...rest} = user._doc
-        const token = jwt.sign({userId:user._id,isAdmin:user.isAdmin},process.env.JWT_SECRET)
+        const token = jwt.sign({ userId: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET);
+if (!token) {
+    console.error('Error generating JWT token');
+    return next(errorHandler(500, 'Internal Server Error'));
+}
+
         res.cookie('access_token',token,{
-        httpOnly: true
+        httpOnly: true,
+        secure:true,
         })
         res.status(200).json({
             rest
