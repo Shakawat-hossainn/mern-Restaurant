@@ -18,12 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/images", express.static('uploads'));
 
-const corsOptions = {
-  origin: 'https://mern-restaurant-frontend-j5d9.onrender.com',
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(cors())
 
 // Routes
 app.use('/api/v1/auth', authRoutes);

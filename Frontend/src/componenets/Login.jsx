@@ -4,7 +4,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { signinFailure,signinStart,signinSuccess } from '../features/User/userSlice'
 
 const Login = () => {
-  const url = "https://mern-restaurant-backend-cphh.onrender.com"
+  
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const {loading,error:errorMessage} = useSelector((store) => store.user)
@@ -21,7 +21,7 @@ const handleSubmit =async(e)=>{
   dispatch(signinStart())
   try {
     
-    const res = await fetch(`${url}/api/v1/auth/login`,{
+    const res = await fetch(`/api/v1/auth/login`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

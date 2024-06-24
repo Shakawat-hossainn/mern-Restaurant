@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 const OrderCard = ({ order }) => {
-  const url = "https://mern-restaurant-backend-cphh.onrender.com"
+ 
   const [status, setStatus] = useState(order.status);
 //console.log(order)
   const handleStatusChange = async (e) => {
     const newStatus = e.target.value;
     setStatus(newStatus);
     try {
-      const res = await fetch(`${url}/api/v1/delivery/orders/updateStatus/${order._id}`, {
+      const res = await fetch(`/api/v1/delivery/orders/updateStatus/${order._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

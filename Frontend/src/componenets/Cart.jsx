@@ -9,15 +9,15 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [deleted, setDeleted] = useState(null);
   const { cartItems, total } = useSelector((store) => store.cart);
-  const urlImage = 'https://mern-restaurant-backend-cphh.onrender.com/images';
-  const url = "https://mern-restaurant-backend-cphh.onrender.com"
+  const urlImage = 'http://localhost:5000/images';
+  
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems, dispatch]);
 
   const deleteCart = async (cartId) => {
     try {
-      const res = await fetch(`${url}/api/v1/cart/deleteCart/${cartId}`, {
+      const res = await fetch(`/api/v1/cart/deleteCart/${cartId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

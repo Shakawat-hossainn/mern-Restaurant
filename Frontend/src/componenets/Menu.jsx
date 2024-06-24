@@ -13,8 +13,8 @@ const Menu = () => {
   const { cartItems } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const url = "https://mern-restaurant-backend-cphh.onrender.com"
-  const urlImage = 'https://mern-restaurant-backend-cphh.onrender.com/images';
+
+  const urlImage = 'http://localhost:5000/images';
   const [menuItems, setMenuItems] = useState([]);
   const [categories, setCategories] = useState(['all']);
   const [displayedItems, setDisplayedItems] = useState([]);
@@ -54,7 +54,7 @@ const Menu = () => {
 
   const handleCart = async (productId) => {
     try {
-      const res = await fetch(`${url}/api/v1/cart/addToCart`, {
+      const res = await fetch(`/api/v1/cart/addToCart`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -79,7 +79,7 @@ const Menu = () => {
   useEffect(() => {
     const getCartItems = async () => {
       try {
-        const res = await fetch(`${url}/api/v1/cart/getCart`, {
+        const res = await fetch(`/api/v1/cart/getCart`, {
           method: 'GET',
           credentials: 'include',
           headers: {

@@ -5,7 +5,7 @@ import { signoutSuccess } from '../features/User/userSlice';
 
 
 const Navbar = () => {
-  const url = "https://mern-restaurant-backend-cphh.onrender.com"
+  
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((store) => store.user);
@@ -13,7 +13,7 @@ const Navbar = () => {
   const handleLogout = async() => {
     try {
       
-      const res = await fetch(`${url}/api/v1/auth/signout`, {
+      const res = await fetch(`/api/v1/auth/signout`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
