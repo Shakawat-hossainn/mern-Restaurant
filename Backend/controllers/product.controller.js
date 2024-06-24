@@ -3,6 +3,8 @@ import errorHandler from "../utils/error.js"
 
 
 const createProduct = async(req,res,next) =>{
+    console.log('Request Body:', req.body);
+    console.log('Uploaded File:', req.file);
    //console.log(req.user)
     // if(!req.user.isAdmin){
     //     next(errorHandler(401,"You are not allowed to create a product"))

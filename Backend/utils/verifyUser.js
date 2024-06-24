@@ -6,11 +6,11 @@ const verifyToken =(req,res,next)=>{
     console.log('JWT Secret:', process.env.JWT_SECRET);
 
     //console.log('Verifying token...');
-    console.log(req.cookies)
+    // console.log(req.cookies)
 
     // Check if token is in cookies
     const token = req.cookies.access_token;
-    console.log('Token from cookies:', token);
+    // console.log('Token from cookies:', token);
 
 if(!token){
     next(errorHandler(401,'Unauthorized'));
