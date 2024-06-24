@@ -7,7 +7,8 @@ import cookieParser from 'cookie-parser';
 import cartRoutes from './routes/cart.route.js';
 import deliveryRoutes from './routes/delivery.route.js';
 import cors from 'cors';
-
+import path from 'path'
+const __dirname = path.resolve();
 const app = express();
 
 // Middleware
@@ -29,7 +30,11 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/product', productRoutes);
 app.use('/api/v1/cart', cartRoutes);
 app.use('/api/v1/delivery', deliveryRoutes);
+app.use(express.static(path.join(__dirname, '/Frontend/dist')));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'dist', 'index.html'));
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
     const message = err.message || 'Internal server error';
