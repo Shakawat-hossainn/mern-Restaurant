@@ -3,22 +3,20 @@ import errorHandler from "../utils/error.js"
 
 
 const createProduct = async(req,res,next) =>{
-    console.log('Request Body:', req.body);
-    console.log('Uploaded File:', req.file);
+   
    //console.log(req.user)
     // if(!req.user.isAdmin){
     //     next(errorHandler(401,"You are not allowed to create a product"))
 
     // }
-    let image_filename = `${req.file.filename}`
+    
     if(!req.body.title || !req.body.description){
         next(errorHandler(400,"All fields are required"))
     }
 
     const newProduct = new Product({
-        ...req.body,
-        image:image_filename,
-        // userId:req.user.userId
+        ...req.body
+        
     })
     try {
         const product = await newProduct.save()

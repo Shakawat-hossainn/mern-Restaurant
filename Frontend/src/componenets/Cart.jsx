@@ -9,7 +9,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [deleted, setDeleted] = useState(null);
   const { cartItems, total } = useSelector((store) => store.cart);
-  const urlImage = 'http://localhost:5000/images';
+  
   
   useEffect(() => {
     dispatch(calculateTotals());
@@ -67,7 +67,7 @@ const Cart = () => {
                   return (
                     <Table.Row key={item._id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                       <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                        <img src={`${urlImage}/${image}`} alt={title} className="h-12 w-12 rounded-full object-cover" />
+                        <img src={image} alt={title} className="h-12 w-12 rounded-full object-cover" />
                       </Table.Cell>
                       <Table.Cell>{title}</Table.Cell>
                       <Table.Cell>{category}</Table.Cell>

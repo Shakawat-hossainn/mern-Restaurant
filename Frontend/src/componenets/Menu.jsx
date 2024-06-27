@@ -135,7 +135,7 @@ const Menu = () => {
 
           return (
             <Card key={_id} className="md:max-w-xs max-w-sm flex flex-col md:justify-between h-full">
-              <img src={`${urlImage}/${image}`} alt={title} className="h-36 w-full object-cover rounded-t-lg" />
+              <img src={image} alt={title} className="h-36 w-full object-cover rounded-t-lg" />
               <div className="p-2 flex flex-col flex-grow">
                 <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-1">{title}</h5>
                 <p className="text-gray-700 dark:text-gray-300 flex-grow text-sm">{description}</p>
