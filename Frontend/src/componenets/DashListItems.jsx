@@ -69,7 +69,7 @@ const DashListItems = () => {
             {products.map((product) => (
               <Table.Row key={product._id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                  <img src={`${urlImage}/` + product.image} alt={product.title} className="h-12 w-12 rounded-full object-cover" />
+                  <img src={product.image} alt={product.title} className="h-12 w-12 rounded-full object-cover" />
                 </Table.Cell>
                 <Table.Cell>{product.title}</Table.Cell>
                 <Table.Cell>{product.category}</Table.Cell>
